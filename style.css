@@ -80,7 +80,7 @@ a {
     margin: 0 auto 16px;
     max-width: 300px;
     width: 100%;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -187,8 +187,8 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: 500;
+    color: #000;
+    font-weight: 700;
     transition: .4s;
     position: relative;
     z-index: 5;
