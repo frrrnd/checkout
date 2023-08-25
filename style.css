@@ -117,6 +117,11 @@ a {
 .buttons .active {
     border-color: #7D6BEE;
     color: #7D6BEE;
+    background: rgb(125, 107, 238, .1);
+}
+
+.buttons .active:hover {
+    background: rgb(125, 107, 238, .1);
 }
 
 .buttons .active span {
