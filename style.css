@@ -1,0 +1,249 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --wrap-bg: #161616;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.container {
+    background: #111;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    background-color: var(--wrap-bg);
+    border-radius: 20px;
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 1px 1px 22px rgba(0,0,0,.04);
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    background: linear-gradient(90deg, #00f1ff 20%, #ff00d4 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    color: rgba(255, 255, 255, .5);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 32px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.buttons a {
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.02);
+    background-color: rgba(0,0,0,0);
+    transition: .4s;
+    margin: 0 auto 16px;
+    max-width: 300px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.buttons a span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #CCCCCC;
+    border-radius: 100%;
+    margin-right: 16px;
+    position: relative;
+    transition: .4s;
+}
+
+.buttons a span:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 100%;
+    transition: .4s;
+}
+
+.buttons a:hover {
+    background-color: rgba(0,0,0,.03);
+    transition: .4s;
+}
+
+.buttons .active {
+    border-color: #7D6BEE;
+    color: #7D6BEE;
+}
+
+.buttons .active span {
+    border-color: #7D6BEE;
+    transition: .4s;
+}
+
+.buttons .active span:after {
+    background-color: #7D6BEE;
+    transition: .4s;
+}
+
+.wallet {
+    width: 300px;
+    height: 192px;
+    background: #333;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    position: relative;
+    background: url(wallet-back.png) no-repeat center center;
+    z-index: 0;
+}
+
+.wallet:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--wrap-bg);
+    z-index: 2;
+    top: 50%;
+}
+
+.wallet:after {
+    content: "";
+    width: 100%;
+    height: 115px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(wallet-front.png) no-repeat center center;
+    z-index: 3;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    border-radius: 10px;
+    background: #7D6BEE;
+    padding: 16px;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    transition: .4s;
+    position: relative;
+    z-index: 5;
+}
+
+.cta-btn:hover {
+    background-color: #5F52B4;
+    transition: .4s;
+}
+
+.cta-btn:hover svg {
+    margin-left: 16px;
+    transition: .4s;
+}
+
+.cta-btn svg {
+    margin-left: 8px;
+    transition: .4s;
+}
+
+.choose-item {
+    width: 255px;
+    height: 50px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: .4s;
+    position: relative;
+    z-index: 1;
+}
+
+.visible .choose-item {
+    opacity: 1;
+    transform: translateY(30px);
+    transition: .4s;
+}
+
+.shiny {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .shiny::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--y, 0) * 1px - 50px);
+    left: calc(var(--x, 0) * 1px - 50px);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(rgba(255,255,255,.07), rgba(255,255,255,0) 60%);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .shiny:hover::after {
+    opacity: 0.4;
+  }
